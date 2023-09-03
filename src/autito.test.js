@@ -46,5 +46,12 @@ describe("Autito", () => {
     expect(metodos.verificarMovimiento("S")).toEqual(false);
   });
 
+  it("Debería verificar moviento D", () => {
+    expect(metodos.verificarMovimiento("D")).toEqual(true);
+  });
+
+  it("Debería recibir mas de una letra", () => {
+    expect(metodos.verificarMovimiento("DAIIA")).toEqual(true);
+  });
 
 });

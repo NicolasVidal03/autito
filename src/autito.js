@@ -31,9 +31,11 @@ function verificarPosIni(posicion) {
 }
 
 function verificarMovimiento(comando) {
-  var validacion = false;
-  if(comando == "I")
-    validacion = true;
+  var validacion = true;
+  for(var i = 0; i < comando.length; i++) {
+    if(comando[i] != "I" && comando[i] != "D" & comando[i] != "A")
+      validacion = false;
+  }
   return validacion;
 }
 
