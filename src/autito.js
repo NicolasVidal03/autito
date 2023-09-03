@@ -96,7 +96,7 @@ function verificarComando(comando) {
 function calcularPosFinal(comando) {
   const moviento = devolverMovimiento(comando);
   const posicionInicial = devolverPosIni(comando);
-  var x="",  y="", coma=false;
+  var x="",  y="", coma = false;
   for(var i = 0; i < posicionInicial.length - 1; i++)
   {
     if(posicionInicial[i] == ",")
@@ -106,9 +106,22 @@ function calcularPosFinal(comando) {
     else if(coma && posicionInicial[i] != ",")
       y += posicionInicial[i];
   }
+  const tamaño = devolverTamaño(comando);
+  var tamX = "", tamY = "", comaTam = false;
+  for(var i = 0; i < tamaño.length; i++)
+  {
+    if(tamaño[i] == ",")
+      comaTam = true;
+    if(!comaTam && tamaño[i] != ",")
+      tamX += tamaño[i];
+    else if(comaTam && tamaño[i] != ",")
+      tamY += tamaño[i];
+  }
 
   var numberX = Number.parseInt(x);
   var numberY = Number.parseInt(y);
+  const numberTamX = Number.parseInt(tamX);
+  const numberTamY = Number.parseInt(tamY);
   var nseo = posicionInicial[posicionInicial.length-1];
   for(var i = 0; i < moviento.length; i++)
   {
@@ -121,7 +134,8 @@ function calcularPosFinal(comando) {
           nseo = "E"
           break;
         case "A":
-          numberY++;
+          if(numberY != numberTamY)
+            numberY++;
       }
     } else if(nseo == "O") {
       switch(moviento[i]){
@@ -157,7 +171,8 @@ function calcularPosFinal(comando) {
           nseo = "S"
           break;
         case "A":
-          numberX++;
+          if(numberX != numberTamX)
+            numberX++;
       }
       
     }

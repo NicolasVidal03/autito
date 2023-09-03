@@ -79,7 +79,7 @@ describe("Autito", () => {
   });
 
   it("Se espera que realice mas de un movimiento", () => {
-    expect(metodos.calcularPosFinal("5,5/1,2N/IA")).toEqual("0,2O");
+    expect(metodos.calcularPosFinal("5,5/1,2N/DA")).toEqual("2,2E");
   });
 
   it("Auto es capaz de moverse con completa seguridad", () => {
@@ -88,6 +88,10 @@ describe("Autito", () => {
 
   it("Auto deberia ignorar el comando A si sobrepasa 0,0", () => {
     expect(metodos.calcularPosFinal("5,5/1,2N/IAAADA")).toEqual("0,3N");
+  });
+
+  it("Auto deberia ignorar el comando A si sobrepasa limites de la tabla 5,5", () => {
+    expect(metodos.calcularPosFinal("5,5/3,4N/DAAADA")).toEqual("5,3S");
   });
 
 
