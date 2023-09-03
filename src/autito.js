@@ -53,19 +53,32 @@ function devolverTamaño(comando) {
 
 function devolverPosIni(comando) {
   var posIni = "";
-  var flag = false;
+  var flag = 0;
   for(var i = 0; i < comando.length; i++)
   {
-    if(flag == true)
+    if(flag == 1 && comando[i] != "/")
       posIni += comando[i];
     if(comando[i] == "/")
-      flag = true;
+      flag++;
   }
   return posIni;
 }
 
+function devolverMovimiento(comando) {
+  var movimiento = "";
+  var flag = 0;
+  for(var i = 0; i < comando.length; i++)
+  {
+    if(flag == 2)
+      movimiento += comando[i];
+    if(comando[i] == "/")
+      flag++;
+  }
+  return movimiento;
+}
 
 
-const metodos = {verificarMatriz, verificarPosIni, verificarMovimiento, devolverTamaño, devolverPosIni};
+
+const metodos = {verificarMatriz, verificarPosIni, verificarMovimiento, devolverTamaño, devolverPosIni, devolverMovimiento};
 
 export default metodos;

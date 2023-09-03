@@ -31,11 +31,11 @@ describe("Autito", () => {
   });
 
   it("Deberia devolver solo el tamaño", () => {
-    expect(metodos.devolverTamaño("5,5/1,2N")).toEqual("5,5");
+    expect(metodos.devolverTamaño("5,5/1,2N/IAIAIAIAA")).toEqual("5,5");
   });
 
   it("Deberia devolver solo la posicion inicial", () => {
-    expect(metodos.devolverPosIni("5,5/1,2N")).toEqual("1,2N");
+    expect(metodos.devolverPosIni("5,5/1,2N/IAIAIAIAA")).toEqual("1,2N");
   });
 
   it("Debería verificar que los comandos de movimiento esten correcto", () => {
@@ -52,6 +52,10 @@ describe("Autito", () => {
 
   it("Debería recibir mas de una letra", () => {
     expect(metodos.verificarMovimiento("DAIIA")).toEqual(true);
+  });
+
+  it("Deberia devolver solo el comando de movimiento", () => {
+    expect(metodos.devolverMovimiento("5,5/1,2N/IAIAIAIAA")).toEqual("IAIAIAIAA");
   });
 
 });
