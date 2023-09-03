@@ -6,17 +6,22 @@ const div = document.querySelector("#resultado-div");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  var respuesta, posFinal = "";
+  var tamaño, posInicial, movimiento, posFinal;
   const flag = metodos.verificarComando(comandos.value);
 
   if(flag == true) {
-    respuesta = " VALIDO";
+    tamaño = metodos.devolverTamaño(comandos.value);
+    movimiento = metodos.devolverMovimiento(comandos.value);
+    posInicial = metodos.devolverPosIni(comandos.value);
     posFinal = metodos.calcularPosFinal(comandos.value);
   }
-  else
-  respuesta = " INVALIDO";
+  else{
+    alert("El formato ingresado es incorrecto");
+    return 0;
+  }
 
-
-  div.innerHTML = "<p>Comando: " + comandos.value + respuesta + 
+  div.innerHTML = "<p>Tamaño de tabla: " + tamaño +
+  "<br>Posicion Inicial: " + posInicial +
+  "<br>Comandos: " + movimiento + 
   "<br>Posicion Final: " + posFinal + "</p>";
 });

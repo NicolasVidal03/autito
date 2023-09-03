@@ -119,7 +119,8 @@ function verificarComando(comando) {
   const boolTam = verificarMatriz(devolverTamaño(comando));
   const boolPosIni = verificarPosIni(devolverPosIni(comando));
   const boolMov = verificarMovimiento(devolverMovimiento(comando));
-  if(boolTam && boolPosIni && boolMov)
+  const boolMenor = posIniMenorTamaño(devolverTamaño(comando), devolverPosIni(comando));
+  if(boolTam && boolPosIni && boolMov && boolMenor)
     validacion = true;
   return validacion;
 }
