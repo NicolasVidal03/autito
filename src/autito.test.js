@@ -94,5 +94,9 @@ describe("Autito", () => {
     expect(metodos.calcularPosFinal("5,5/3,4N/DAAADA")).toEqual("5,3S");
   });
 
+  it("Deberia verificar que la posicion inicial si es menor a tamaño de tabla", () => {
+    expect(metodos.posIniMenorTamaño("5,5", "1,2N")).toEqual(true);
+  });
+
 
 });

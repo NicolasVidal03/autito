@@ -83,6 +83,11 @@ function devolverMovimiento(comando) {
   return movimiento;
 }
 
+function posIniMenorTamaño(posIni, tamaño)
+{
+  return true;
+}
+
 function verificarComando(comando) {
   var validacion = false;
   const boolTam = verificarMatriz(devolverTamaño(comando));
@@ -180,6 +185,8 @@ function calcularPosFinal(comando) {
   return numberX.toString() + "," + numberY.toString() + nseo;
 }
 
-const metodos = {verificarMatriz, verificarPosIni, verificarMovimiento, devolverTamaño, devolverPosIni, devolverMovimiento, verificarComando, calcularPosFinal};
+const metodos = {verificarMatriz, verificarPosIni, verificarMovimiento, 
+                  devolverTamaño, devolverPosIni, devolverMovimiento, 
+                  verificarComando, calcularPosFinal, posIniMenorTamaño};
 
 export default metodos;
