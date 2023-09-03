@@ -31,7 +31,10 @@ function verificarPosIni(posicion) {
 }
 
 function verificarMovimiento(comando) {
-  return true;
+  var validacion = false;
+  if(comando == "I")
+    validacion = true;
+  return validacion;
 }
 
 function devolverTamaño(comando) {

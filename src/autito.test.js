@@ -42,5 +42,9 @@ describe("Autito", () => {
     expect(metodos.verificarMovimiento("I")).toEqual(true);
   });
 
+  it("Debería verificar moviento S no existe", () => {
+    expect(metodos.verificarMovimiento("S")).toEqual(false);
+  });
+
 
 });
