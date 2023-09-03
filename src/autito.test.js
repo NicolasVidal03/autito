@@ -62,4 +62,8 @@ describe("Autito", () => {
     expect(metodos.verificarComando("5,5/1,2N/IAIAIAIAA")).toEqual(true);
   });
 
+  it("Deberia devolver que el comando es invalido", () => {
+    expect(metodos.verificarComando("5,5/1,2N")).toEqual(false);
+  });
+
 });

@@ -1,13 +1,16 @@
 function verificarMatriz(tamaño) {
-  var validacion = true, tieneComa = false;
-  for(var i = 0; i < tamaño.length; i++)
-  {
-    if(tamaño[i] != "0" && tamaño[i] != "1" && tamaño[i] != "2" && tamaño[i] != "3" && tamaño[i] != "4" && tamaño[i] != "5" && tamaño[i] != "6" && tamaño[i] != "7" && tamaño[i] != "8" && tamaño[i] != "9" && tamaño[i] != ",")
-      validacion = false
-    else if(tamaño[i] == "," && tieneComa == false && i != tamaño.length-1)
-      tieneComa = true;
-    else if(tamaño[i] == "," && tieneComa == true || tamaño[i] == "," && i == tamaño.length-1 || i == tamaño.length-1 && tieneComa == false)
-      validacion = false;
+  var validacion = false, tieneComa = false;
+  if(tamaño.length != 0) {
+    validacion = true;
+    for(var i = 0; i < tamaño.length; i++)
+    {
+      if(tamaño[i] != "0" && tamaño[i] != "1" && tamaño[i] != "2" && tamaño[i] != "3" && tamaño[i] != "4" && tamaño[i] != "5" && tamaño[i] != "6" && tamaño[i] != "7" && tamaño[i] != "8" && tamaño[i] != "9" && tamaño[i] != ",")
+        validacion = false
+      else if(tamaño[i] == "," && tieneComa == false && i != tamaño.length-1)
+        tieneComa = true;
+      else if(tamaño[i] == "," && tieneComa == true || tamaño[i] == "," && i == tamaño.length-1 || i == tamaño.length-1 && tieneComa == false)
+        validacion = false;
+    }
   }
   return validacion;
 }
@@ -31,10 +34,13 @@ function verificarPosIni(posicion) {
 }
 
 function verificarMovimiento(comando) {
-  var validacion = true;
-  for(var i = 0; i < comando.length; i++) {
-    if(comando[i] != "I" && comando[i] != "D" & comando[i] != "A")
-      validacion = false;
+  var validacion = false;
+  if(comando.length != 0) {
+    validacion = true;
+    for(var i = 0; i < comando.length; i++) {
+      if(comando[i] != "I" && comando[i] != "D" & comando[i] != "A")
+        validacion = false;
+    }
   }
   return validacion;
 }
@@ -78,7 +84,13 @@ function devolverMovimiento(comando) {
 }
 
 function verificarComando(comando) {
-  return true;
+  var validacion = false;
+  const boolTam = verificarMatriz(devolverTamaño(comando));
+  const boolPosIni = verificarPosIni(devolverPosIni(comando));
+  const boolMov = verificarMovimiento(devolverMovimiento(comando));
+  if(boolTam && boolPosIni && boolMov)
+    validacion = true;
+  return validacion;
 }
 
 const metodos = {verificarMatriz, verificarPosIni, verificarMovimiento, devolverTamaño, devolverPosIni, devolverMovimiento, verificarComando};
