@@ -26,4 +26,8 @@ describe("Autito", () => {
     expect(metodos.verificarPosIni("1,2W")).toEqual(false);
   });
 
+  it("Deberia detectar error al ingresar formato no valido", () => {
+    expect(metodos.verificarPosIni("1,,N")).toEqual(false);
+  });
+
 });
