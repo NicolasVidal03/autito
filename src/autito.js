@@ -95,10 +95,72 @@ function verificarComando(comando) {
 
 function calcularPosFinal(comando) {
   const moviento = devolverMovimiento(comando);
-  if(moviento == "I")
-    return "1,2O";
-  else if(moviento == "D")
-    return "1,2E";
+  const posicionInicial = devolverPosIni(comando);
+  var x="",  y="", coma=false;
+  for(var i = 0; i < posicionInicial.length - 1; i++)
+  {
+    if(posicionInicial[i] == ",")
+      coma = true;
+    if(!coma && posicionInicial[i] != ",")
+      x += posicionInicial[i];
+    else if(coma && posicionInicial[i] != ",")
+      y += posicionInicial[i];
+  }
+
+  var numberX = Number.parseInt(x);
+  var numberY = Number.parseInt(y);
+  var nseo = posicionInicial[posicionInicial.length-1];
+  for(var i = 0; i < moviento.length; i++)
+  {
+    if(nseo == "N") {
+      switch(moviento[i]){
+        case "I":
+          nseo = "O";
+          break;
+        case "D":
+          nseo = "E"
+          break;
+        case "A":
+          numberY++;
+      }
+    } else if(nseo == "O") {
+      switch(moviento[i]){
+        case "I":
+          nseo = "S";
+          break;
+        case "D":
+          nseo = "N"
+          break;
+        case "A":
+          numberX--;
+      }
+    } else if(nseo == "S") {
+      switch(moviento[i]){
+        case "I":
+          nseo = "E";
+          break;
+        case "D":
+          nseo = "O"
+          break;
+        case "A":
+          numberY--;
+      }
+      
+    } else if(nseo == "E") {
+      switch(moviento[i]){
+        case "I":
+          nseo = "N";
+          break;
+        case "D":
+          nseo = "S"
+          break;
+        case "A":
+          numberX++;
+      }
+      
+    }
+  }
+  return numberX.toString() + "," + numberY.toString() + nseo;
 }
 
 const metodos = {verificarMatriz, verificarPosIni, verificarMovimiento, devolverTamaño, devolverPosIni, devolverMovimiento, verificarComando, calcularPosFinal};

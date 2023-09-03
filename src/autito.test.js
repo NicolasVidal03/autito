@@ -74,5 +74,12 @@ describe("Autito", () => {
     expect(metodos.calcularPosFinal("5,5/1,2N/D")).toEqual("1,2E");
   });
 
+  it("Se ingresa A y se espera que avance", () => {
+    expect(metodos.calcularPosFinal("5,5/1,2N/A")).toEqual("1,3N");
+  });
+
+  it("Se espera que realice mas de un movimiento", () => {
+    expect(metodos.calcularPosFinal("5,5/1,2N/IA")).toEqual("0,2O");
+  });
 
 });
