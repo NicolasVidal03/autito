@@ -66,4 +66,10 @@ describe("Autito", () => {
     expect(metodos.verificarComando("5,5/1,2N")).toEqual(false);
   });
 
+  it("Se ingresa I y se espera que devuelva la posicion final", () => {
+    expect(metodos.calcularPosFinal("5,5/1,2N/I")).toEqual("1,2O");
+  });
+
+
+
 });

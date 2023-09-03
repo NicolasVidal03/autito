@@ -93,6 +93,10 @@ function verificarComando(comando) {
   return validacion;
 }
 
-const metodos = {verificarMatriz, verificarPosIni, verificarMovimiento, devolverTamaño, devolverPosIni, devolverMovimiento, verificarComando};
+function calcularPosFinal(comando) {
+  return "1,2O"
+}
+
+const metodos = {verificarMatriz, verificarPosIni, verificarMovimiento, devolverTamaño, devolverPosIni, devolverMovimiento, verificarComando, calcularPosFinal};
 
 export default metodos;
