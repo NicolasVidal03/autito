@@ -30,6 +30,20 @@ function verificarPosIni(posicion) {
   return validacion;
 }
 
-const metodos = {verificarMatriz, verificarPosIni};
+function devolverTamaño(comando) {
+  var tamaño = "";
+  for(var i = 0; i < comando.length; i++)
+  {
+    if(comando[i] == "/")
+      i = comando.length;
+    else
+      tamaño += comando[i];
+  }
+  return tamaño;
+}
+
+
+
+const metodos = {verificarMatriz, verificarPosIni, devolverTamaño};
 
 export default metodos;

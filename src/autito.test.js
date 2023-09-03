@@ -30,9 +30,11 @@ describe("Autito", () => {
     expect(metodos.verificarPosIni("1,,N")).toEqual(false);
   });
 
+  it("Deberia devolver solo el tamaño", () => {
+    expect(metodos.devolverTamaño("5,5/1,2N")).toEqual("5,5");
+  });
 
 
 
-  
 
 });
