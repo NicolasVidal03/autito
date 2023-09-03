@@ -86,5 +86,9 @@ describe("Autito", () => {
     expect(metodos.calcularPosFinal("5,5/1,2N/IAIAIAIAA")).toEqual("1,3N");
   });
 
+  it("Auto deberia ignorar el comando A si sobrepasa 0,0", () => {
+    expect(metodos.calcularPosFinal("5,5/1,2N/IAAADA")).toEqual("0,3N");
+  });
+
 
 });

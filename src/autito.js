@@ -132,7 +132,8 @@ function calcularPosFinal(comando) {
           nseo = "N"
           break;
         case "A":
-          numberX--;
+          if(numberX != 0)
+            numberX--;
       }
     } else if(nseo == "S") {
       switch(moviento[i]){
@@ -143,7 +144,8 @@ function calcularPosFinal(comando) {
           nseo = "O"
           break;
         case "A":
-          numberY--;
+          if(numberY != 0)
+            numberY--;
       }
       
     } else if(nseo == "E") {
