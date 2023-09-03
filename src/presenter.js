@@ -6,12 +6,6 @@ const div = document.querySelector("#resultado-div");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-var respuesta;
 
-  flag = verificarMatriz(comandos.value)
-    if(flag == true)
-      respuesta = "Formato correcto";
-    else
-      respuesta = "Formato incorrecto";
-  div.innerHTML = "<p>Tamaño de la matriz: " + comandos.value + " con " + respuesta + "</p>";
+  div.innerHTML = "<p>COMANDO: " + comandos.value + "</p>";
 });

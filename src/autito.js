@@ -12,5 +12,10 @@ function verificarMatriz(comando) {
   return validacion;
 }
 
+function verificarPosIni(posicion) {
+  return true;
+}
 
-export default verificarMatriz;
+const metodos = {verificarMatriz, verificarPosIni};
+
+export default metodos;
