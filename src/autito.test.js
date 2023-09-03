@@ -34,7 +34,9 @@ describe("Autito", () => {
     expect(metodos.devolverTamaño("5,5/1,2N")).toEqual("5,5");
   });
 
-
+  it("Deberia devolver solo la posicion inicial", () => {
+    expect(metodos.devolverPosIni("5,5/1,2N")).toEqual("1,2N");
+  });
 
 
 });

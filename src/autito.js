@@ -42,8 +42,21 @@ function devolverTamaño(comando) {
   return tamaño;
 }
 
+function devolverPosIni(comando) {
+  var posIni = "";
+  var flag = false;
+  for(var i = 0; i < comando.length; i++)
+  {
+    if(flag == true)
+      posIni += comando[i];
+    if(comando[i] == "/")
+      flag = true;
+  }
+  return posIni;
+}
 
 
-const metodos = {verificarMatriz, verificarPosIni, devolverTamaño};
+
+const metodos = {verificarMatriz, verificarPosIni, devolverTamaño, devolverPosIni};
 
 export default metodos;
