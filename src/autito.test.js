@@ -30,4 +30,9 @@ describe("Autito", () => {
     expect(metodos.verificarPosIni("1,,N")).toEqual(false);
   });
 
+
+
+
+  
+
 });

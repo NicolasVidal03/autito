@@ -1,12 +1,12 @@
-function verificarMatriz(comando) {
+function verificarMatriz(tamaño) {
   var validacion = true, tieneComa = false;
-  for(var i = 0; i < comando.length; i++)
+  for(var i = 0; i < tamaño.length; i++)
   {
-    if(comando[i] != "0" && comando[i] != "1" && comando[i] != "2" && comando[i] != "3" && comando[i] != "4" && comando[i] != "5" && comando[i] != "6" && comando[i] != "7" && comando[i] != "8" && comando[i] != "9" && comando[i] != ",")
+    if(tamaño[i] != "0" && tamaño[i] != "1" && tamaño[i] != "2" && tamaño[i] != "3" && tamaño[i] != "4" && tamaño[i] != "5" && tamaño[i] != "6" && tamaño[i] != "7" && tamaño[i] != "8" && tamaño[i] != "9" && tamaño[i] != ",")
       validacion = false
-    else if(comando[i] == "," && tieneComa == false && i != comando.length-1)
+    else if(tamaño[i] == "," && tieneComa == false && i != tamaño.length-1)
       tieneComa = true;
-    else if(comando[i] == "," && tieneComa == true || comando[i] == "," && i == comando.length-1 || i == comando.length-1 && tieneComa == false)
+    else if(tamaño[i] == "," && tieneComa == true || tamaño[i] == "," && i == tamaño.length-1 || i == tamaño.length-1 && tieneComa == false)
       validacion = false;
   }
   return validacion;
