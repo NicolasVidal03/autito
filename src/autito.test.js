@@ -58,4 +58,8 @@ describe("Autito", () => {
     expect(metodos.devolverMovimiento("5,5/1,2N/IAIAIAIAA")).toEqual("IAIAIAIAA");
   });
 
+  it("Verifica que el comando tenga formato correcto", () => {
+    expect(metodos.verificarComando("5,5/1,2N/IAIAIAIAA")).toEqual(true);
+  });
+
 });

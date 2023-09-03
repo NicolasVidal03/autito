@@ -77,8 +77,10 @@ function devolverMovimiento(comando) {
   return movimiento;
 }
 
+function verificarComando(comando) {
+  return true;
+}
 
-
-const metodos = {verificarMatriz, verificarPosIni, verificarMovimiento, devolverTamaño, devolverPosIni, devolverMovimiento};
+const metodos = {verificarMatriz, verificarPosIni, verificarMovimiento, devolverTamaño, devolverPosIni, devolverMovimiento, verificarComando};
 
 export default metodos;
