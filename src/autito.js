@@ -94,7 +94,11 @@ function verificarComando(comando) {
 }
 
 function calcularPosFinal(comando) {
-  return "1,2O"
+  const moviento = devolverMovimiento(comando);
+  if(moviento == "I")
+    return "1,2O";
+  else if(moviento == "D")
+    return "1,2E";
 }
 
 const metodos = {verificarMatriz, verificarPosIni, verificarMovimiento, devolverTamaño, devolverPosIni, devolverMovimiento, verificarComando, calcularPosFinal};

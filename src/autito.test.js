@@ -70,6 +70,9 @@ describe("Autito", () => {
     expect(metodos.calcularPosFinal("5,5/1,2N/I")).toEqual("1,2O");
   });
 
+  it("Se ingresa D y se espera que devuelva la posicion final", () => {
+    expect(metodos.calcularPosFinal("5,5/1,2N/D")).toEqual("1,2E");
+  });
 
 
 });
