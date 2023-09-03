@@ -82,4 +82,9 @@ describe("Autito", () => {
     expect(metodos.calcularPosFinal("5,5/1,2N/IA")).toEqual("0,2O");
   });
 
+  it("Auto es capaz de moverse con completa seguridad", () => {
+    expect(metodos.calcularPosFinal("5,5/1,2N/IAIAIAIAA")).toEqual("1,3N");
+  });
+
+
 });
