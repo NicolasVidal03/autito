@@ -14,8 +14,13 @@ function verificarMatriz(comando) {
 
 function verificarPosIni(posicion) {
   var validacion = false;
-  if(posicion == "1,2N")
+  if(posicion[posicion.length-1] == "N" || posicion[posicion.length-1] == "E" || posicion[posicion.length-1] == "S" || posicion[posicion.length-1] == "O")
     validacion = true;
+    for(var i = 0; i < posicion.length-1; i++)
+    {
+      if(posicion[i] != "0" && posicion[i] != "1" && posicion[i] != "2" && posicion[i] != "3" && posicion[i] != "4" && posicion[i] != "5" && posicion[i] != "6" && posicion[i] != "7" && posicion[i] != "8" && posicion[i] != "9" && posicion[i] != ",")
+        validacion = false
+    }
   return validacion;
 }
 

@@ -22,4 +22,8 @@ describe("Autito", () => {
     expect(metodos.verificarPosIni("1/2N")).toEqual(false);
   });
 
+  it("Deberia detectar error al ingresar una direccion cardinal invalida", () => {
+    expect(metodos.verificarPosIni("1,2W")).toEqual(false);
+  });
+
 });
