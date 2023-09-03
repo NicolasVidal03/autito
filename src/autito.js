@@ -1,5 +1,8 @@
 function verificarMatriz(comando) {
-  return true;
+  var flag = false;
+  if(comando == "5,5")
+    flag = true;
+  return flag;
 }
 
 
