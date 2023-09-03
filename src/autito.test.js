@@ -14,8 +14,12 @@ describe("Autito", () => {
     expect(metodos.verificarMatriz("10,7")).toEqual(true);
   });
 
-  it("Deberia verificar la posicion inicial", () => {
+  it("Deberia devolver la posicion inicial de forma correcta", () => {
     expect(metodos.verificarPosIni("1,2N")).toEqual(true);
+  });
+
+  it("Deberia detectar un valor incorrecto en la posicion inicial", () => {
+    expect(metodos.verificarPosIni("1/2N")).toEqual(false);
   });
 
 });

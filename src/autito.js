@@ -13,7 +13,10 @@ function verificarMatriz(comando) {
 }
 
 function verificarPosIni(posicion) {
-  return true;
+  var validacion = false;
+  if(posicion == "1,2N")
+    validacion = true;
+  return validacion;
 }
 
 const metodos = {verificarMatriz, verificarPosIni};
