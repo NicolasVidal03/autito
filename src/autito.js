@@ -83,9 +83,35 @@ function devolverMovimiento(comando) {
   return movimiento;
 }
 
-function posIniMenorTamaño(posIni, tamaño)
+function posIniMenorTamaño(tamaño, posIni)
 {
-  return true;
+  var x="",  y="", coma = false, resp = false;;
+  for(var i = 0; i < posIni.length - 1; i++)
+  {
+    if(posIni[i] == ",")
+      coma = true;
+    if(!coma && posIni[i] != ",")
+      x += posIni[i];
+    else if(coma && posIni[i] != ",")
+      y += posIni[i];
+  }
+  var tamX = "", tamY = "", comaTam = false;
+  for(var i = 0; i < tamaño.length; i++)
+  {
+    if(tamaño[i] == ",")
+      comaTam = true;
+    if(!comaTam && tamaño[i] != ",")
+      tamX += tamaño[i];
+    else if(comaTam && tamaño[i] != ",")
+      tamY += tamaño[i];
+  }
+  var numeroX = Number.parseInt(x);
+  var numeroY = Number.parseInt(y);
+  var numeroTamX = Number.parseInt(tamX);
+  var numeroTamY = Number.parseInt(tamY);
+  if(numeroX <= numeroTamX && numeroY <= numeroTamY)
+    resp = true;
+  return resp;
 }
 
 function verificarComando(comando) {

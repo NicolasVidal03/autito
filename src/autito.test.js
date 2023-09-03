@@ -98,5 +98,9 @@ describe("Autito", () => {
     expect(metodos.posIniMenorTamaño("5,5", "1,2N")).toEqual(true);
   });
 
+  it("Deberia verificar que la posicion inicial es mayor a tamaño de tabla", () => {
+    expect(metodos.posIniMenorTamaño("5,5", "6,1N")).toEqual(false);
+  });
+
 
 });
