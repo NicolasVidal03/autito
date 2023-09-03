@@ -38,5 +38,9 @@ describe("Autito", () => {
     expect(metodos.devolverPosIni("5,5/1,2N")).toEqual("1,2N");
   });
 
+  it("Debería verificar que los comandos de movimiento esten correcto", () => {
+    expect(metodos.verificarMovimiento("I")).toEqual(true);
+  });
+
 
 });
