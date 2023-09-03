@@ -1,15 +1,11 @@
-import sumar from "./sumador";
+import calcularTamañoMatriz from "./autito";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
+const comandos = document.querySelector("#comandos");
+const form = document.querySelector("#auto-form");
 const div = document.querySelector("#resultado-div");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
-
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+  div.innerHTML = "<p>Tamaño de la matriz: " + comandos.value + "</p>";
 });
